@@ -11,9 +11,23 @@ const barbie = {
   render: () => {
     barbie.element.innerHTML = `
         <h1>${barbie.name} Status</h1>
-        <h3>${barbie.name} works as a ${barbie.career?.name} </h3>
-        <h3> Each week ${barbie.name} takes home $${barbie.career?.income}</h3>
-        <h3> Currently ${barbie.name} has $${barbie.wallet} in their bank account</h3>
+        <h3>${barbie.name} works as a ${barbie.career.name} </h3>
+        <h3> Each week ${barbie.name} takes home $${barbie.career.income}</h3>
+        <h3> Currently ${barbie.name} has $${
+      barbie.wallet
+    } in their bank account</h3>
+        <div> <h2>Wardrobe Contains: </h2> 
+        <ul>${barbie.wardrobe
+          .map((item) => {
+            return `<li>
+                ${barbie.name} has a ${item.color} 
+                ${item.name} made by ${item.designer}
+                that is worth ${item.price} in size 
+                ${item.size} 
+                </li>`;
+          })
+          .join('')}</ul>
+        </div>
     `;
   },
 };
@@ -25,6 +39,14 @@ class Career {
     this.income = income;
   }
 }
+// Instantiate a new career and assigning it to barbie's career property
+const barbieCareer = new Career(
+  'Doctor',
+  'helps people with their boo boos',
+  2938
+);
+
+barbie.career = barbieCareer;
 
 class Clothing {
   constructor(name, designer, color, type, size, price) {
