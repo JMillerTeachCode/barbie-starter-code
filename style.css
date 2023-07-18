@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 body {
     background-color: pink;
     display: flex;
@@ -7,9 +9,25 @@ body {
     height: 80vh;
 }
 
+#modal {
+  width: 650px;
+  border: 2px solid white;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:violet;
+  border-radius: 15px;
+}
 
-
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+#job-form { 
+  height: 300px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .box-1 {
   height:175px;
@@ -24,11 +42,12 @@ img {
   top: 10px;
   right: 20px;
   float: right;
+  width: 200px
 }
 
 .box-2 h1 {
   position: relative;
-  bottom: 160px;
+  bottom: 190px;
   left: 35px;
   color: #F6F2E9;
   font-family: 'Montserrat', sans-serif;
@@ -45,9 +64,11 @@ img {
 
 #container {
   width:400px;
-  height:200px;
+  height: 400px;
   background: #A03ACC;
   border-radius: 15px;
   position: relative;
 };
+
+
 
