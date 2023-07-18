@@ -9,10 +9,10 @@ const barbie = {
   element: document.querySelector('#barbie'),
   // Game Screen
   render: () => {
-    barbie.el.innerHTML = `
+    barbie.element.innerHTML = `
         <h1>${barbie.name} Status</h1>
-        <h3>${barbie.name} works as a ${barbie.career.name} </h3>
-        <h3> Each week ${barbie.name} takes home $${barbie.career.income}</h3>
+        <h3>${barbie.name} works as a ${barbie.career?.name} </h3>
+        <h3> Each week ${barbie.name} takes home $${barbie.career?.income}</h3>
         <h3> Currently ${barbie.name} has $${barbie.wallet} in their bank account</h3>
     `;
   },
@@ -73,3 +73,5 @@ workButton.addEventListener('click', () => {
     alert('You are unemployed, get a job first');
   }
 });
+
+barbie.render();
